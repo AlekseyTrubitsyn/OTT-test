@@ -1,0 +1,21 @@
+{
+  "name": "onetwotrip-test",
+  "description": null,
+  "version": "0.0.15",
+  "dependencies": {
+    "redux": "3.7.2",
+    "react-redux": "5.0.6",
+    "react-dom": "16.0.0",
+    "react": "16.0.0",
+    "moment": "2.19.2"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

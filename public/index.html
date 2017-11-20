@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+  -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <!--
+    Notice the use of %PUBLIC_URL% in the tags above.
+    It will be replaced with the URL of the `public` folder during the build.
+    Only files inside the `public` folder can be referenced from the HTML.
+
+    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+    work correctly both with client-side routing and a non-root public URL.
+    Learn how to configure a non-root public URL by running `npm run build`.
+  -->
+  <title>React App</title>
+  
+</head>
+<body>
+  <noscript>
+	You need to enable JavaScript to run this app.
+</noscript>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+
+  body {
+    font-family: 'Montserrat', serif;
+    font-weight: 400;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  strong {
+      font-weight: 600;
+  }
+
+  .flights-select {
+      margin: 10px;
+  }
+
+  .flights-select__block {
+      display: inline-block;
+
+      margin: 5px;
+      padding: 10px 15px;
+  }
+ 
+  .flights-daytime-select { padding: 0; }
+
+  .flights-widget__list::after {
+      display: table;
+      clear: both;
+
+      content: '';
+  }
+
+  .flights-widget__item {
+      float: left;
+
+      width: 350px;
+      margin: 5px;
+
+      text-align: left;
+
+      -webkit-border-radius: 10px;
+              border-radius: 10px;
+      background: #ddd;
+      -webkit-box-shadow: 2px 2px 5px #aaa;
+              box-shadow: 2px 2px 5px #aaa;
+  }
+
+  .flights-widget-item__header {
+      margin: 0;
+      padding: 6px 10px;
+
+      text-align: left;
+
+      color: #fff;
+      -webkit-border-radius: 6px 6px 0 0;
+              border-radius: 6px 6px 0 0;
+      background-color: #009ADD;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #009ADD), color-stop(55%, #2882dc));
+      background-image: -webkit-linear-gradient(top, #009ADD 50%, #2882dc 55%);
+      background-image:         linear-gradient(to bottom, #009ADD 50%, #2882dc 55%);
+  }
+
+  .flights-widget-item__sub {
+      font-size: 14px;
+
+      padding: 5px 10px;
+  }
+
+  .flights-widget-item__sub:not(:last-child) {
+      border-bottom: 1px dashed #aaa;
+  }
+
+  .flights-custom-select {
+    position: relative;
+  }
+
+  .flights-custom-select__current {
+      border-bottom: 1px dashed #2882dc;
+  }
+
+  .flights-custom-select:hover .flights-custom-select__current {
+      border: none;
+  }
+
+  .flights-custom-select__list {
+      position: absolute;
+      top: 37px;
+      right: 10px;
+
+      display: none;
+
+      border: 1px dashed #009add;
+      border-bottom: none;
+      background: white;
+  }
+
+  .flights-custom-select:hover .flights-custom-select__list {
+      display: unset;
+  }
+
+  .flights-custom-select__item {
+      padding: 10px 20px;
+
+      cursor: pointer;
+
+      border-bottom: 1px dashed #0b96d4;
+  }
+
+  .flights-custom-select__item:hover {
+      color: white;
+      background: #2882dc;
+  }
+
+  .flights-daytime-select__label {
+      cursor: pointer;
+  }
+
+  .flights-daytime-select input {
+      display: none;
+  }
+
+  .flights-daytime-select__label span {
+      padding: 5px 10px;
+
+      -webkit-border-radius: 5px;
+              border-radius: 5px;
+  }
+
+  .flights-daytime-select__input:checked + span {
+      color: white;
+      background: #009add;
+  }
+</style>
+<div id="root"></div>
+  <!--
+    This HTML file is a template.
+    If you open it directly in the browser, you will see an empty page.
+
+    You can add webfonts, meta tags, or analytics to this file.
+    The build step will place the bundled scripts into the <body> tag.
+
+    To begin the development, run `npm start` or `yarn start`.
+    To create a production bundle, use `npm run build` or `yarn build`.
+  -->
+</body>
+</html>
