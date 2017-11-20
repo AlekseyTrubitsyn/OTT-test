@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BaseSelect = ({ carriers, filter, onChange, setDayTimeFilter }) => (
+const BaseSelect = ({ carriers, filter, onChange }) => (
   <div className='flights-select__block'>
     <span> Авиакомпания: </span>
     <select name='carriers' onChange={onChange} value={filter}>
@@ -20,7 +20,7 @@ const BaseSelect = ({ carriers, filter, onChange, setDayTimeFilter }) => (
   </div>
 );
 
-const CustomSelect = ({ carriers, filter, onChange, setDayTimeFilter }) => (
+const CustomSelect = ({ carriers, filter, onChange }) => (
   <div className='flights-select__block flights-custom-select'>
     <span> Авиакомпания: </span>&nbsp;<span className='flights-custom-select__current'>{filter || 'Все авиакомпании'}</span>
     <ul className='flights-custom-select__list' onClick={onChange}>
@@ -40,7 +40,7 @@ const CustomSelect = ({ carriers, filter, onChange, setDayTimeFilter }) => (
   </div>
 );
 
-const DayTimeSelect = ({ carriers, filter, setDayTimeFilter }) => (
+const DayTimeSelect = ({ setDayTimeFilter }) => (
   <div className='flights-select__block flights-daytime-select'>
     <label className='flights-daytime-select__label'>
       <input className='flights-daytime-select__input' type='checkbox' onChange={setDayTimeFilter} />&nbsp;
@@ -90,18 +90,13 @@ class FlightsSelect extends React.Component {
           carriers={this.props.carriers}
           filter={this.state.filter}
           onChange={this.handleBaseFilterSelect}
-          setDayTimeFilter={this.handleDaytimeSelect}
         />
         <CustomSelect
           carriers={this.props.carriers}
           filter={this.state.filter}
           onChange={this.handleCustomFilterSelect}
-          setDayTimeFilter={this.handleDaytimeSelect}
         />
         <DayTimeSelect
-          carriers={this.props.carriers}
-          filter={this.state.filter}
-          onChange={this.handleFilterSelect}
           setDayTimeFilter={this.handleDaytimeSelect}
         />
       </div>
