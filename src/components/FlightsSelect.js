@@ -67,5 +67,5 @@ FlightsSelect.propTypes = {
     PropTypes.string.isRequired
   ).isRequired,
   onChange: PropTypes.func.isRequired,
-  setDayTimeFilter: PropTypes.func.isRequired
+  setDaytimeFilter: PropTypes.func.isRequired
 }
