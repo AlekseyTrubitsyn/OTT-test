@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { filterCarriers, setDayTimeFilter } from '../actions'; 
+import { filterCarriers, setDaytimeFilter } from '../actions';
 import FlightsSelect from '../components/FlightsSelect';
 
 function mapStateToProps(state) {
@@ -11,14 +11,13 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  
+
   return {
     onChange: (name) => dispatch(filterCarriers(name)),
-    setDayTimeFilter: (value) => dispatch(setDayTimeFilter(value))
+    setDaytimeFilter: (value) => dispatch(setDaytimeFilter(value))
   }
 }
 
 const CarrierSelectContainer = connect(mapStateToProps, mapDispatchToProps)(FlightsSelect);
 
 export default CarrierSelectContainer;
-

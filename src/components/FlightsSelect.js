@@ -1,53 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BaseSelect = ({ carriers, filter, onChange }) => (
-  <div className='flights-select__block'>
-    <span> Авиакомпания: </span>
-    <select name='carriers' onChange={onChange} value={filter}>
-      <option key='0'>
-        Все авиакомпании
-      </option>
-      {carriers.map((item, index) => (
-        <option
-          key={index + 1}
-          name={item}
-        >
-          {item}
-        </option>
-      ))}
-    </select>
-  </div>
-);
-
-const CustomSelect = ({ carriers, filter, onChange }) => (
-  <div className='flights-select__block flights-custom-select'>
-    <span> Авиакомпания: </span>&nbsp;<span className='flights-custom-select__current'>{filter || 'Все авиакомпании'}</span>
-    <ul className='flights-custom-select__list' onClick={onChange}>
-      <li className='flights-custom-select__item' key="0" id='Все авиакомпании'>
-        Все&nbsp;авиакомпании
-      </li>
-      {carriers.map((item, index) => (
-        <li
-          key={index + 1}
-          id={item}
-          className='flights-custom-select__item'
-        >
-          {item}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-const DayTimeSelect = ({ setDayTimeFilter }) => (
-  <div className='flights-select__block flights-daytime-select'>
-    <label className='flights-daytime-select__label'>
-      <input className='flights-daytime-select__input' type='checkbox' onChange={setDayTimeFilter} />&nbsp;
-      <span>Только дневные прилёты</span>
-    </label>
-  </div>
-)
+import BaseSelect from './selectors/BaseSelect';
+import CustomSelect from './selectors/CustomSelect';
+import DaytimeSelect from './selectors/DaytimeSelect';
 
 class FlightsSelect extends React.Component {
   constructor(props) {
@@ -80,7 +36,7 @@ class FlightsSelect extends React.Component {
   }
 
   handleDaytimeSelect(e) {
-    this.props.setDayTimeFilter(e.currentTarget.checked);
+    this.props.setDaytimeFilter(e.currentTarget.checked);
   }
 
   render() {
@@ -96,8 +52,8 @@ class FlightsSelect extends React.Component {
           filter={this.state.filter}
           onChange={this.handleCustomFilterSelect}
         />
-        <DayTimeSelect
-          setDayTimeFilter={this.handleDaytimeSelect}
+        <DaytimeSelect
+          setDaytimeFilter={this.handleDaytimeSelect}
         />
       </div>
     )

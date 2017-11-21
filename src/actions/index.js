@@ -16,7 +16,7 @@ export function filterCarriers(title) {
   }
 }
 
-export function setDayTimeFilter(value) {
+export function setDaytimeFilter(value) {
   return {
     type: FILTER_DAY_TIME,
     isOn: value
